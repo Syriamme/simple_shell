@@ -13,8 +13,8 @@ int main(int argc, char **argv, char **environ)
 	(void)argv;
 
 	(void)argc;
-
-	prompt(environ);
+	
+	repeat_prompt(environ);
 
 	return (0);
 }

@@ -26,9 +26,9 @@ int my_bui_lt(char **toek, list_y *environ, int number, char **mand)
 
 	if (my_stringcmp(toek[0], "exit") == 0)
 	{
-		a = _exit(toek, environ, num, mand);
+		a = _exit(toek, environ, number, mand);
 	}
-	else if (my_stringcmp(token[0], "env") == 0)
+	else if (my_stringcmp(toek[0], "env") == 0)
 	{
 		_gt_enve(toek, environ);
 		a = 1;
@@ -102,7 +102,7 @@ int repeat_prompt(char **environ)
 	char *mad, **toek, *y_comad;
 	int mand_no = 0, exi_t = 0;
 
-	environ = _linked_list_envt(enr);
+	environ = envron_linked_lst(enr);
 	do {
 		mand_no++;
 		if (isatty(STDIN_FILENO))
@@ -129,12 +129,12 @@ int repeat_prompt(char **environ)
 		
 		if (y_comad != NULL)
 			free(y_comad);
-		exi_t = my_bui_lt(toek, environ, mand_no, NULL);
+		exi_t = my_bui_lt(toek, enr, mand_no, NULL);
 		
 		if (exi_t)
 			continue;
 		exi_t = the_execve(toek, enr, mand_no);
 	}
-	while (1)
-		return (exi_t);
+	while (1);
+	return (exi_t);
 }

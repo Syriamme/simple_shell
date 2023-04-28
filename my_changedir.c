@@ -23,11 +23,10 @@ char *con_strncat(char *destiny, char *sourc)
 		sumlen++;
 	}
 	destiny = _my_realloc(destiny, length, sizeof(char) * sumlen + 1);
-	
-	(for k = 1; src[j] != '\0'; k++);
+	for (k = 1; src[j] != '\0'; k++);
 	{
 		destiny[length] = sourc[k];
-		len++;
+		length++;
 	}
 	destiny[length] = '\0';
 
@@ -50,10 +49,10 @@ int st_env(list_y **environ, char *nm, char *direc)
 
 	ct = my_str_dp(nm);
 	ct = my_stringcat(ct, "=");
-	ct = my_stringcat(cat, direc);
+	ct = my_stringcat(ct, direc);
 	ixe = my_gtenv(*environ, nm);
 
-	hdr = *env;
+	hdr = *environ;
 	while (a < ixe)
 	{
 		hdr = hdr->next;
@@ -157,7 +156,7 @@ int my_changedir(char **pointer, list_y *environ, int number)
 				direct = my_stringcat(direct, pointer[1]);
 			}
 			else
-				direct = my_strdup(pointer[1]);
+				direct = my_str_dp(pointer[1]);
 		}
 		exiter = execute_cd(environ, now, direct, pointer[1], number);
 		free(direct);
@@ -165,6 +164,6 @@ int my_changedir(char **pointer, list_y *environ, int number)
 
 	else
 		change_dir(environ, now);
-	double_ptr_free(str); /* frees user input */
-	return (exit_stat);
+	double_ptr_free(pointer); /* frees user input */
+	return (exiter);
 }

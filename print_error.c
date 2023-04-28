@@ -14,7 +14,7 @@ void found_not(char *pointer, int nth, list_y *environ)
 	char *nuber;
 	int sum = 0;
 
-	sel = _gt_enve("_", env);
+	sel = _gt_enve("_", environ);
 	
 	for (; sel[sum] != '\0'; sum++)
 		;
@@ -54,7 +54,7 @@ void cd_fail(char *pointer, int nt, list_y *environ)
 	char *nuber;
 	int sum =0;
 
-	sel = _get_enve("_", environ);
+	sel = _gt_enve("_", environ);
 	
 	while (sel[sum] != '\0')
 		sum++;
@@ -64,7 +64,7 @@ void cd_fail(char *pointer, int nt, list_y *environ)
 	write(STDOUT_FILENO, ": ", 2);
 	nuber = integ_string(nt);
 	
-	for (sum = 0; nuber[sum] != '\0' sum++)
+	for (sum = 0; nuber[sum] != '\0'; sum++)
 		;
 	
 	write(STDOUT_FILENO, nuber, sum);
@@ -106,16 +106,14 @@ void _wrong_number(char *pointer, int nt, list_y *environ)
 	nuba = integ_string(nt);
 	
 	for (sum = 0; nuba[sum] != '\0'; sum++)
-		;
-	write(STDOUT_FILENO, nuba, sum);
+		write(STDOUT_FILENO, nuba, sum);
 	free(nuba);
 	
 	write(STDOUT_FILENO, ": ", 2);
 	write(STDOUT_FILENO, "exit: Illegal number: ", 22);
 	
-	for (sum = 0; pointer[sum] != '\0; sum++)
-		;
-	write(STDOUT_FILENO, pointer, sum);
+	for (sum = 0; pointer[sum] != '\0'; sum++)
+		write(STDOUT_FILENO, pointer, sum);
 	
 	write(STDOUT_FILENO, "\n", 1);
 }

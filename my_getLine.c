@@ -14,7 +14,7 @@ size_t _my_get_line(char **pointer)
 	ssize_t k = 0;
 	char bafa[1024];
 
-	while (y2 == 0 && (a = read(STDIN_FILENO, buff, 1024 - 1)))
+	while (y2 == 0 && (a = read(STDIN_FILENO, bafa, 1024 - 1)))
 	{
 		if (a == -1)
 			return (-1);
@@ -36,7 +36,7 @@ size_t _my_get_line(char **pointer)
 		else
 		{
 			get = get + a;
-			*pointer = con_strncat(*pointer, bufa);
+			*pointer = con_strncat(*pointer, bafa);
 		}
 	}
 	return (get);

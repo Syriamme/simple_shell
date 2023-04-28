@@ -8,7 +8,7 @@
  */
 void com_exit(char **pointer, list_y *environ)
 {
-	double_pt_free(pointer);
+	double_ptr_free(pointer);
 	_linked_list_freed(environ);
 	exit(0);
 }
@@ -29,7 +29,7 @@ int the_execve(char **ptr, list_y *environ, int number)
 
 	if (access(ptr[0], F_OK) == 0)
 	{
-		hdr = s[0];
+		hdr = a[0];
 		a = 1;
 	}
 	

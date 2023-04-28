@@ -42,7 +42,7 @@ int un_env(list_y **environ, char **pointer)
 	if (pointer[1] == NULL)
 	{
 		write(STDOUT_FILENO, "few args passed\n", 18);
-		double_ptr_free(pointertr);
+		double_ptr_free(poiner);
 		return (-1);
 	}
 	ixe = my_gtenv(*environ, pointer[1]);
@@ -85,10 +85,10 @@ int my_set_env(list_y **environ, char **pointer)
 		return (-1);
 	}
 	
-	cpyca = my_str_dp(str[1]);
+	cpyca = my_str_dp(pointer[1]);
 	cpyca = my_stringcat(cpyca, "=");
 	cpyca = my_stringcat(cpyca, pointer[2]);
-	ixe = _gt_enve(*environ, pointer[1]);
+	ixe = my_gtenv(environ, pointer[1]);
 	
 	if (ixe == -1)
 	{

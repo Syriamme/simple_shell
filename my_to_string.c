@@ -70,6 +70,6 @@ char *integ_string(int nm)
 		numbers %= snet;
 		snet /= 10;
 	}
-	resuslt[j] = '\0';
+	result[j] = '\0';
 	return (result);
 }

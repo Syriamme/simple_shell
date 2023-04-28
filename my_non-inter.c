@@ -39,7 +39,7 @@ void _non_interacting(list_y *eniv)
 	coand = _custom_ig(coand);
 	a_lie = my_strok(coand, "\n");
 
-	if (n_coand != NULL)
+	if (n_coad != NULL)
 		free(n_coad);
 	m = 0;
 	while (a_lie[m] != NULL)

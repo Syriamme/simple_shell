@@ -28,7 +28,7 @@ char *my_whic(char *pointer, list_y *environ)
 		else
 			cpycat =my_str_dp(token[j]);
 		cpycat = my_stringcat(cpycat, "/");
-		cpycat = my_stringcat(cpcat, pointer);
+		cpycat = my_stringcat(cpycat, pointer);
 		
 		if (access(cpycat, F_OK) == 0)
 		{
