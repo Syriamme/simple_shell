@@ -13,7 +13,7 @@ int my_strnlen(char *pointer, int point, char delimeter)
 
 	for (length = 0; (pointer[point] != delimeter) && (pointer[point] != '\0'); length++)
 	{
-		pooint++;
+		point++;
 	}
 	return (length);
 }
@@ -54,7 +54,7 @@ int m_t_sze(char *pointer, char delimet)
 
 char *_delimeter_ig(char *pointer, char delimeta)
 {
-	while (*pointer == delimeter)
+	while (*pointer == delimeta)
 		
 		pointer++;
 	return (pointer);
@@ -66,7 +66,7 @@ char *_delimeter_ig(char *pointer, char delimeta)
  * @delimeta: delimeter
  * Return: token array
  */
-char **my_strok(char pointer*, char *delimeta)
+char **my_strok(char *pointer, char *delimeta)
 {
 	int bufze = 0;
 	int o = 0;

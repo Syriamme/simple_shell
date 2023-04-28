@@ -25,7 +25,7 @@ char *my_str_dp(char *pointer)
 	}
 	for (j = 0; j < length; j++)
 	{
-		*(dup_string + a) = *(pointer + j);
+		*(dup_string + j) = *(pointer + j);
 		j++;
 	}
 

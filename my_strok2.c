@@ -37,8 +37,8 @@ char **my_cont_strok(char *pointer, char *delimm)
 	int zep = 0;
 	char **token = NULL, c_sh;
 
-	c_sh = delim[0];
-	bufsze = re_t_sze(pointerr, c_sh);
+	c_sh = delimm[0];
+	bufsze = re_t_sze(pointer, c_sh);
 	token = malloc(sizeof(char *) * (bufsze + 2));
 	if (token == NULL)
 		return (NULL);

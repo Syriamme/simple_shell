@@ -12,7 +12,7 @@ int n_length(int nth)
 
 	for (sum = 0; number > 9 || number < -9; sum++)
 	{
-		num /= 10;
+		sum /= 10;
 	}
 	return (sum);
 }
@@ -39,26 +39,27 @@ char *integ_string(int nm)
 	if (nm < 0)
 		q = 1;
 	
-	result = malloc(sizeof(char) * (n_length(numbers) + 2 + t));
+	result = malloc(sizeof(char) * (n_length(numbers) + 2 + q));
 	
 	if (result == NULL)
 		return (NULL);
 	if (nm < 0)
 	{
-		result[i] = '-';
+		result[j] = '-';
 		j++;
 	}
 	y = 0;
-	while (numbers > 9 || numbers < -9; x++)
+	while (numbers > 9 || numbers < -9)
 	{
 	       numbers	/= 10;
 		snet *= 10;
+		y++;
 	}
 	for (numbers = nm; y >= 0; y--)
 	{
 		if (numbers < 0)
 		{
-			resuslt[j] = (numbers / snet) * -1 + '0';
+			result[j] = (numbers / snet) * -1 + '0';
 			j++;
 		}
 		else

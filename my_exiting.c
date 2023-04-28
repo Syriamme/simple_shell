@@ -13,7 +13,7 @@ int custom_atoi(char *ptr)
 	
 	for (; ptr[a] != '\0'; a++)
 	{
-		if ptr[a] <= '9' && (ptr[a] >= '0')
+		if (ptr[a] <= '9' && ptr[a] >= '0')
 			number = (number * 10) + (ptr[a] - '0');
 		if (ptr[a] > '0' || ptr[a] < '9')
 			return (-1);
@@ -50,7 +50,7 @@ int free_to_exit(char **ptr, list_y *environ, int number, char **mand)
 		return (2);
 	}
 	double_ptr_free(ptr);
-	_linked_list_freed(env);
+	_linked_list_freed(environ);
 	if (mand != NULL)
 		double_ptr_free(mand);
 	exit(valu_e);

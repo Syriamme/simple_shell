@@ -6,7 +6,7 @@
  *@src: second string
  *Return: final concatenated string
  */
-char *my_stringcat(char *second char *first)
+char *my_stringcat(char *second, char *first)
 {
 	int length = 0, length2 = 0;
 	int sum_length = 0, k = 0;

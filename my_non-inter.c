@@ -36,9 +36,10 @@ void _non_interacting(list_y *eniv)
 	}
 	
 	n_coad = coand;
-	coand = custom_ig(coand);
-	n_line = my_strok(coand, "\n");
-	if (n_command != NULL)
+	coand = _custom_ig(coand);
+	a_lie = my_strok(coand, "\n");
+
+	if (n_coand != NULL)
 		free(n_coad);
 	m = 0;
 	while (a_lie[m] != NULL)
@@ -46,7 +47,7 @@ void _non_interacting(list_y *eniv)
 		mand_no++;
 		toek = NULL;
 
-		toek =my_strok(a_lie[m], " ");
+		toek = my_strok(a_lie[m], " ");
 		
 		ex_it = my_bui_lt(toek, eniv, mand_no, a_lie);
 		if (ex_it)

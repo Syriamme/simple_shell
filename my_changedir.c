@@ -9,8 +9,8 @@
 
 char *con_strncat(char *destiny, char *sourc)
 {
-	int length = 0, lenght2 = 0;
-	int sumlen = 0, int k = 0;
+	int length = 0, length2 = 0;
+	int sumlen = 0, k = 0;
 	
 	while (destiny[length] != '\0')
 	{
@@ -22,9 +22,9 @@ char *con_strncat(char *destiny, char *sourc)
 		length2++;
 		sumlen++;
 	}
-	destiny = _realloc(destiny, length, sizeof(char) * sum_len + 1);
+	destiny = _my_realloc(destiny, length, sizeof(char) * sumlen + 1);
 	
-	(for k = 1; src[j] != '\0'; k++)
+	(for k = 1; src[j] != '\0'; k++);
 	{
 		destiny[length] = sourc[k];
 		len++;
@@ -48,9 +48,9 @@ int st_env(list_y **environ, char *nm, char *direc)
 	char *ct;
 	list_y *hdr;
 
-	ct = my _strdup(nm);
-	ct = my_strcat(ct, "=");
-	ct = my_strcat(cat, dir);
+	ct = my_str_dp(nm);
+	ct = my_stringcat(ct, "=");
+	ct = my_stringcat(cat, direc);
 	ixe = my_gtenv(*environ, nm);
 
 	hdr = *env;
@@ -60,7 +60,7 @@ int st_env(list_y **environ, char *nm, char *direc)
 		a++;
 	}
 	free(hdr->varib);
-	hdr->varib = my_strdup(ct);
+	hdr->varib = my_str_dp(ct);
 	free(ct);
 	return (0);
 }
@@ -75,7 +75,7 @@ void change_dir(list_y *environ, char *now)
 {
 	char *back = NULL;
 
-	bac = my_gtenv("HOME", environ);
+	back = _gt_enve("HOME", environ);
 	st_env(&environ, "OLDPWD", now);
 	free(back);
 	
@@ -109,7 +109,7 @@ int execute_cd(list_y *environ, char *now, char *direct, char *ptr, int number)
 		chdir(direct);
 		now = NULL;
 		
-		now = getcwd(current, 0);
+		now = getcwd(now, 0);
 		st_env(&environ, "PWD", now);
 		free(now);
 	}
@@ -146,7 +146,7 @@ int my_changedir(char **pointer, list_y *environ, int number)
 		else if (pointer[1][0] == '-')
 		{
 			if (pointer[1][1] == '\0')
-				direct = my_gt_enr("OLDPWD", environ);
+				direct = my_get_enr("OLDPWD", environ);
 		}
 		else
 		{
@@ -164,7 +164,7 @@ int my_changedir(char **pointer, list_y *environ, int number)
 	}
 
 	else
-		change_dir(environ, current);
+		change_dir(environ, now);
 	double_ptr_free(str); /* frees user input */
 	return (exit_stat);
 }

@@ -22,7 +22,7 @@ size_t _list_print(list_y *nth)
 		}
 		else
 		{
-			for (a = 0; ((h_list->varib)[a] != '\0'; a++);
+			for (a = 0;(h_list->varib)[a] != '\0'; a++);
 					write(STDOUT_FILENO, h_list->varib, a);
 					write(STDOUT_FILENO, "\n", 1);
 		}
@@ -42,15 +42,15 @@ list_y *end_node_add(list_y **head, char *pointer)
 {
 	list_y *hdr, *new_node;
 
-	if (*pointer == NULL || *head == NULL)
+	if (*pointer == NULL || head == NULL)
 		return (NULL);
 	
-	new_node = malloc(sizeof(list_t));
+	new_node = malloc(sizeof(list_y));
 	
 	if (new_node == NULL)
 		return (NULL);
 	
-	new_node->varib = my_strdup(pointer);
+	new_node->varib = my_str_dp(pointer);
 	new_node->next = NULL;
 
 	hdr = *head;
@@ -98,7 +98,7 @@ int _nodeint_delte_at_index(list_y **head, int ixe)
 	}
 	sum = 1;
 	x_head = *head;
-	while (sum < index)
+	while (sum < ixe)
 	{
 		if (x_head == NULL)
 			return (-1);

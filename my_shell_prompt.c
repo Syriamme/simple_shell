@@ -24,27 +24,27 @@ int my_bui_lt(char **toek, list_y *environ, int number, char **mand)
 {
 	int a = 0;
 
-	if (my_strcmp(toek[0], "exit") == 0)
+	if (my_stringcmp(toek[0], "exit") == 0)
 	{
-		a = my_exit(toek, environ, num, mand);
+		a = _exit(toek, environ, num, mand);
 	}
-	else if (my_strcmp(token[0], "env") == 0)
+	else if (my_stringcmp(token[0], "env") == 0)
 	{
-		my_gtenv(toek, environ);
+		_gt_enve(toek, environ);
 		a = 1;
 	}
-	else if (my_strcmp(toek[0], "cd") == 0)
+	else if (my_stringcmp(toek[0], "cd") == 0)
 	{
 		a = my_changedir(toek, environ, number);
 	}
-	else if (my_strcmp(toek[0], "setenv") == 0)
+	else if (my_stringcmp(toek[0], "setenv") == 0)
 	{
 		my_set_env(&environ, toek);
 		a = 1;
 	}
-	else if (my_strcmp(toek[0], "unsetenv") == 0)
+	else if (my_stringcmp(toek[0], "unsetenv") == 0)
 	{
-		_un_env(&environ, toek);
+		un_env(&environ, toek);
 		a = 1;
 	}
 	return (a);
@@ -80,7 +80,7 @@ void _control_D(int a, char *mand, list_y *environ)
 	if (a == 0)
 	{
 		free(mand);
-		linked_list_freed(env);
+		_linked_list_freed(environ);
 		
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "\n", 1);
@@ -108,20 +108,17 @@ int repeat_prompt(char **environ)
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "$ ", 2);
 		else
-			_non_interacting(environ);
+			_non_interacting(enr);
 		signal(SIGINT, control_C);
-		mand = NULL;
-		
+		mad = NULL;
 		j = 0;
-		j = _my_get_line(mad);
-		
-		_control_D(j, mad, environ);
+		j = _my_get_line(&mad);
+		_control_D(j, mad, enr);
 		y_comad = mad;
 		mad = _space_ig(mad);
 		
-		for (m = 0; mad[m] != '\n'; n++);
+		for (m = 0; mad[m] != '\n'; m++);
 		mad[m] = '\0';
-		
 		if (mad[0] == '\0')
 		{
 			free(y_comad);
@@ -132,11 +129,12 @@ int repeat_prompt(char **environ)
 		
 		if (y_comad != NULL)
 			free(y_comad);
-		exi_t = the_bui_lt_in(toek, environ, mand_no, NULL);
+		exi_t = my_bui_lt(toek, environ, mand_no, NULL);
 		
 		if (exi_t)
 			continue;
-		exi_t = the_execve(toek, environ, mand_no);
-	} while (1)
-	return (exi_t);
+		exi_t = the_execve(toek, enr, mand_no);
+	}
+	while (1)
+		return (exi_t);
 }

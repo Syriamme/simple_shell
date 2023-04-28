@@ -8,15 +8,14 @@
  */
 int my_stringcmp(char *string1, char *string2)
 {
-	int j;
-
-	for (j =0; string1[j] = string2[j]; j++)
+	while (string1 == string2)
 	{
-		if (string1[j] == '\0')
+		if (string1 == '\0')
 		{
 			return (0);
 		}
+		string1++;
+		string2++;
 	}
-	else
-		return (string1[j] - string2[j]);
+	return (string1 -string2);
 }

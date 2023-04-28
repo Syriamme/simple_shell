@@ -16,7 +16,7 @@ char *my_stringcpy(char *second, char *first)
 		;
 
 	for (j = 0; j <= length; j++)
-		second[j] = firsr[j];
+		second[j] = first[j];
 
 	return (second);
 }

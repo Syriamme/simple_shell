@@ -8,7 +8,7 @@
 list_y *envron_link_lst(char **environ)
 {
 	int a = 0;
-	list_t *head;
+	list_y *head;
 	
 	for (head = NULL; environ[a] != NULL; a++)
 	{
@@ -26,7 +26,7 @@ list_y *envron_link_lst(char **environ)
  */
 
 
-int print_envt(char **ptr, list_t *environ)
+int print_envt(char **ptr, list_y *environ)
 {
 	double_ptr_free(ptr);
 	_list_print(environ);

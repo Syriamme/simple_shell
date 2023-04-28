@@ -6,7 +6,7 @@
  * @environ: the envt var
  * Return: command copy
  */
-char *my_whic(char *pointer, list_t *environ)
+char *my_whic(char *pointer, list_y *environ)
 {
 	char *cpycat = NULL;
 	char *path;

@@ -45,12 +45,12 @@ char *my_get_enr(char *pointer, list_y *environ)
 
 	while (environ != NULL)
 	{
-		for (b = 0; ((environ->varib)[b]== pointer[b]; b++)
+		for (b = 0; (environ->varib)[b]== pointer[b]; b++);
 		if ((environ->varib)[b] == '=' && pointer[b] == '\0')
 			break;
 		environ = environ->next;
 	}
 
-	for (; pointer[nth] != '\0'; cs++);
+	for (; pointer[nth] != '\0'; nth++);
 	return (custom_strdp(environ->varib, nth));
 }

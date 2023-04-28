@@ -8,9 +8,9 @@
  */
 void com_exit(char **pointer, list_y *environ)
 {
-	double_pt_freer(pointer);
+	double_pt_free(pointer);
 	_linked_list_freed(environ);
-	my_exit(0);
+	exit(0);
 }
 
 /**
@@ -22,11 +22,11 @@ void com_exit(char **pointer, list_y *environ)
  */
 int the_execve(char **ptr, list_y *environ, int number)
 {
+	pid_t pid;
 	char *hdr;
 	int stat = 0;
-	a  = 0;
-	pid_t pid;
-	
+	int a  = 0;
+
 	if (access(ptr[0], F_OK) == 0)
 	{
 		hdr = s[0];
@@ -34,7 +34,7 @@ int the_execve(char **ptr, list_y *environ, int number)
 	}
 	
 	else
-		hdr = _my_whic(ptr[0], environ);
+		hdr = my_whic(ptr[0], environ);
 	
 	
 	if (access(hdr, X_OK) != 0)
@@ -56,7 +56,7 @@ int the_execve(char **ptr, list_y *environ, int number)
 		}
 		else
 		{
-			wait(&sta);
+			wait(&stat);
 			double_ptr_free(ptr);
 			if (a == 0)
 				free(hdr);

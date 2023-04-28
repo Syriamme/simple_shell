@@ -14,7 +14,7 @@ int main(int argc, char **argv, char **environ)
 
 	(void)argc;
 
-	prompt(env);
+	prompt(environ);
 
 	return (0);
 }

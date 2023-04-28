@@ -55,7 +55,7 @@ int un_env(list_y **environ, char **pointer)
 		return (-1);
 	}
 	
-	k = _nodeint_delte_at_index(envron, ixe);
+	k = _nodeint_delte_at_index(environ, ixe);
 	
 	if (k == -1)
 	{
@@ -85,10 +85,10 @@ int my_set_env(list_y **environ, char **pointer)
 		return (-1);
 	}
 	
-	cpyca = my_strdup(str[1]);
+	cpyca = my_str_dp(str[1]);
 	cpyca = my_stringcat(cpyca, "=");
 	cpyca = my_stringcat(cpyca, pointer[2]);
-	ixe = _get_enve(*environ, pointer[1]);
+	ixe = _gt_enve(*environ, pointer[1]);
 	
 	if (ixe == -1)
 	{
