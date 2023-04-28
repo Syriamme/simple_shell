@@ -41,25 +41,25 @@ int un_env(list_y **environ, char **pointer)
 
 	if (pointer[1] == NULL)
 	{
-		write(STDOUT_FILENO, "few args passed\n", 18);
-		double_ptr_free(poiner);
+		write(STDOUT_FILENO, "few args passed\n", 15);
+		double_ptr_free(pointer);
 		return (-1);
 	}
 	ixe = my_gtenv(*environ, pointer[1]);
-	
+
 	double_ptr_free(pointer);
-	
+
 	if (ixe == -1)
 	{
-		write(STDOUT_FILENO, "Can't get\n", 12);
+		write(STDOUT_FILENO, "Can't get\n", 8);
 		return (-1);
 	}
-	
+
 	k = _nodeint_delte_at_index(environ, ixe);
-	
+
 	if (k == -1)
 	{
-		write(STDOUT_FILENO, "Can't get\n", 12);
+		write(STDOUT_FILENO, "Can't get\n", 8);
 		return (-1);
 	}
 	return (0);
@@ -80,7 +80,7 @@ int my_set_env(list_y **environ, char **pointer)
 	
 	if (pointer[1] == NULL || pointer[2] == NULL)
 	{
-		write(STDOUT_FILENO, "few args\n", 18);
+		write(STDOUT_FILENO, "few args\n", 7);
 		double_ptr_free(pointer);
 		return (-1);
 	}
@@ -88,7 +88,7 @@ int my_set_env(list_y **environ, char **pointer)
 	cpyca = my_str_dp(pointer[1]);
 	cpyca = my_stringcat(cpyca, "=");
 	cpyca = my_stringcat(cpyca, pointer[2]);
-	ixe = my_gtenv(environ, pointer[1]);
+	ixe = my_gtenv(*environ, pointer[1]);
 	
 	if (ixe == -1)
 	{

@@ -13,7 +13,7 @@ char *my_whic(char *pointer, list_y *environ)
 	char **token;
 	int j = 0;
 
-	path = _gt_enve("PATH", environ);
+	path = my_get_enr("PATH", environ);
 	
 	token = my_cont_strok(path, ":");
 	

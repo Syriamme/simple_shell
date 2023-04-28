@@ -96,7 +96,7 @@ char **my_strok(char *pointer, char *delimeta)
 			token[o] = malloc(sizeof(char) * (length + 1));
 			if (token[o] == NULL)
 				return (NULL);
-			for(j = 0; pointer[zip] != c_sh && pointer[zip] != '\0'); j++)
+			for(j = 0; pointer[zip] != c_sh && pointer[zip] != '\0'; j++)
 			{
 				token[o][j] = pointer[zip];
 				zip++;

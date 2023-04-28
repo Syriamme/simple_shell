@@ -29,7 +29,7 @@ int the_execve(char **ptr, list_y *environ, int number)
 
 	if (access(ptr[0], F_OK) == 0)
 	{
-		hdr = a[0];
+		hdr = ptr[0];
 		a = 1;
 	}
 	
@@ -39,7 +39,7 @@ int the_execve(char **ptr, list_y *environ, int number)
 	
 	if (access(hdr, X_OK) != 0)
 	{
-		found_not(s[0], number, environ);
+		found_not(ptr[0], number, environ);
 		double_ptr_free(ptr);
 		return (127);
 	}
