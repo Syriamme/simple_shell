@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * _list_print - linked list must be printed
- * @nth: this is the linked list
- * Return: the linked list size
+ *_list_print - linked list must be printed
+ *@nth: this is the linked list
+ *Return: the linked list size
  */
 size_t _list_print(list_y *nth)
 {
@@ -12,7 +12,6 @@ size_t _list_print(list_y *nth)
 
 	if (nth == NULL)
 		return (0);
-	
 	for (; h_list != NULL; sum++)
 	{
 		if (h_list->varib == NULL)
@@ -22,7 +21,7 @@ size_t _list_print(list_y *nth)
 		}
 		else
 		{
-			for (a = 0;(h_list->varib)[a] != '\0'; a++)
+			for (a = 0; (h_list->varib)[a] != '\0'; a++)
 				write(STDOUT_FILENO, h_list->varib, a);
 			write(STDOUT_FILENO, "\n", 1);
 		}
@@ -33,10 +32,10 @@ size_t _list_print(list_y *nth)
 
 
 /**
- * end_node_add - this function will add a node
- * @head: head of linked list pointer
- * @pointer: new node data
- * Return: new node pointer
+ *end_node_add - this function will add a node
+ *@head: head of linked list pointer
+ *@pointer: new node data
+ *Return: new node pointer
  */
 list_y *end_node_add(list_y **head, char *pointer)
 {
@@ -44,17 +43,12 @@ list_y *end_node_add(list_y **head, char *pointer)
 
 	if (pointer == NULL || head == NULL)
 		return (NULL);
-	
 	new_node = malloc(sizeof(list_y));
-	
 	if (new_node == NULL)
 		return (NULL);
-	
 	new_node->varib = my_str_dp(pointer);
 	new_node->next = NULL;
-
 	hdr = *head;
-	
 	if (hdr != NULL)
 	{
 		while (hdr->next != NULL)
@@ -63,7 +57,6 @@ list_y *end_node_add(list_y **head, char *pointer)
 		}
 		hdr->next = new_node;
 	}
-	
 	else
 	{
 		*head = new_node;

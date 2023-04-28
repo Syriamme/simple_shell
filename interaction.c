@@ -14,7 +14,7 @@ char *_custom_ig(char *pointer)
 }
 
 /**
- * _not_interacting - a function to handle piping
+ * _non_interacting - a function to handle piping
  * @eniv: envrionmental variables
  */
 void _non_interacting(list_y *eniv)
@@ -23,10 +23,8 @@ void _non_interacting(list_y *eniv)
 	size_t m = 0;
 	int mand_no = 0;
 	int ex_it = 0;
-	char *coand = NULL;
-	char *n_coad = NULL;
-	char **a_lie;
-	char **toek;
+	char *coand = NULL, *n_coad = NULL;
+	char **a_lie, **toek;
 
 	j = _my_get_line(&coand);
 	if (j == 0)
@@ -34,11 +32,9 @@ void _non_interacting(list_y *eniv)
 		free(coand);
 		exit(0);
 	}
-	
 	n_coad = coand;
 	coand = _custom_ig(coand);
 	a_lie = my_strok(coand, "\n");
-
 	if (n_coad != NULL)
 		free(n_coad);
 	m = 0;
@@ -46,9 +42,7 @@ void _non_interacting(list_y *eniv)
 	{
 		mand_no++;
 		toek = NULL;
-
 		toek = my_strok(a_lie[m], " ");
-		
 		ex_it = my_bui_lt(toek, eniv, mand_no, a_lie);
 		if (ex_it)
 		{

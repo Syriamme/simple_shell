@@ -1,17 +1,17 @@
 #include "shell.h"
 
 /**
- * con_strncat - concatenating two strings
- * @dest: appending string to
- * @src: appended string
- * Return: stringconcatenated
+ *con_strncat- concatenating two strings
+ *@destiny: appending string to
+ *@sourc: appended string
+ *Return: stringconcatenated
  */
 
 char *con_strncat(char *destiny, char *sourc)
 {
 	int length = 0, length2 = 0;
 	int sumlen = 0, k = 0;
-	
+
 	while (destiny[length] != '\0')
 	{
 		length++;
@@ -23,7 +23,6 @@ char *con_strncat(char *destiny, char *sourc)
 		sumlen++;
 	}
 	destiny = _my_realloc(destiny, length, sizeof(char) * sumlen + 1);
-	
 	for (k = 1; sourc[k] != '\0'; k++)
 	{
 		destiny[length] = sourc[k];

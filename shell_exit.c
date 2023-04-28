@@ -10,7 +10,7 @@ int custom_atoi(char *ptr)
 {
 	unsigned int number = 0;
 	int a = 0;
-	
+
 	for (; ptr[a] != '\0'; a++)
 	{
 		if (ptr[a] <= '9' && ptr[a] >= '0')
@@ -28,11 +28,9 @@ int custom_atoi(char *ptr)
  * @ptr: user command
  *
  * @environ: environment variable to be freed
- * 
- * @number: nth command with an error message
+ *@number: nth command with an error message
+ *@mand: command freing
  *
- * @mand: command freing
- * 
  * Return: 0 (success) 2 (if fail)
  */
 

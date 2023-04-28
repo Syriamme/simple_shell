@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * custom_strdp - string duplicate function
- * @pointer: pointer to a string to duplicate
- * @nth: bytes being excluded
- * Return: the string
+ *custom_strdp - string duplicate function
+ *@pointer: pointer to a string to duplicate
+ *@nth: bytes being excluded
+ *Return: the string
  */
 
 char *custom_strdp(char *pointer, int nth)
@@ -22,8 +22,7 @@ char *custom_strdp(char *pointer, int nth)
 	dup_string = malloc(sizeof(char) * (length - nth));
 	if (dup_string == NULL)
 		return (NULL);
-
-	 for (a = 0; a < length - nth; a++)
+	for (a = 0; a < length - nth; a++)
 	{
 		*(dup_string + a) = *(pointer + nth + a);
 	}
@@ -35,7 +34,7 @@ char *custom_strdp(char *pointer, int nth)
  * my_get_enr - returning the envt variable copy
  *@pointer: pointer to a string
  * @environ: environment varaible set
- * Return: environ requested
+ *Return: environ requested
  */
 
 char *my_get_enr(char *pointer, list_y *environ)
@@ -45,12 +44,11 @@ char *my_get_enr(char *pointer, list_y *environ)
 
 	while (environ != NULL)
 	{
-		for (b = 0; (environ->varib)[b]== pointer[b]; b++);
-		if ((environ->varib)[b] == '=' && pointer[b] == '\0')
+		for (b = 0; (environ->varib)[b] == pointer[b]; b++)
+			if ((environ->varib)[b] == '=' && pointer[b] == '\0')
 			break;
 		environ = environ->next;
 	}
-
-	for (; pointer[nth] != '\0'; nth++);
-	return (custom_strdp(environ->varib, nth));
+	for (; pointer[nth] != '\0'; nth++)
+		return (custom_strdp(environ->varib, nth));
 }

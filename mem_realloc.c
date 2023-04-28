@@ -35,12 +35,11 @@ void *_my_realloc(void *pointer, unsigned int prev, unsigned int current)
 	if (ptr == NULL)
 		return (NULL);
 	a = 0;
-       while(a < current && a < prev)
-       {
-	       *((char *)ptr + a) = *((char *)pointer + a);
-	       a++;
-       }
-	free(pointer); /* free old ptr */
-
+	while (a < current && a < prev)
+	{
+		*((char *)ptr + a) = *((char *)pointer + a);
+		a++;
+	}
+	free(pointer);
 	return (ptr);
 }

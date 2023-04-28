@@ -16,7 +16,6 @@ int my_gtenv(list_y *environ, char *pointer)
 		k = 0;
 		while ((environ->varib)[k] == pointer[k])
 			k++;
-		
 		if (pointer[k] == '\0')
 			break;
 		environ = environ->next;
@@ -24,7 +23,6 @@ int my_gtenv(list_y *environ, char *pointer)
 	}
 	if (environ == NULL)
 		return (-1);
-	
 	return (ixe);
 }
 
@@ -37,7 +35,7 @@ int my_gtenv(list_y *environ, char *pointer)
 int un_env(list_y **environ, char **pointer)
 {
 	int ixe = 0;
-	int k= 0;
+	int k = 0;
 
 	if (pointer[1] == NULL)
 	{

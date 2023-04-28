@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * n_length - a function for number 
- * @nth: the number
+ *n_length - a function for number
+ *@nth: the number
  * Return: returns digit count
  */
 
@@ -26,21 +26,16 @@ int n_length(int nth)
 
 char *integ_string(int nm)
 {
-	int numbers;
-	int snet;
-	int j = 0;
-	int q = 0;
+	int snet, numbers;
+	int j = 0, q = 0;
 	int y;
 	char *result;
 
 	numbers = nm;
 	snet = 1;
-
 	if (nm < 0)
 		q = 1;
-	
 	result = malloc(sizeof(char) * (n_length(numbers) + 2 + q));
-	
 	if (result == NULL)
 		return (NULL);
 	if (nm < 0)
@@ -48,12 +43,10 @@ char *integ_string(int nm)
 		result[j] = '-';
 		j++;
 	}
-	y = 0;
-	while (numbers > 9 || numbers < -9)
+	for (y = 0; numbers > 9 || numbers < -9; y++)
 	{
-	       numbers	/= 10;
+		numbers	/= 10;
 		snet *= 10;
-		y++;
 	}
 	for (numbers = nm; y >= 0; y--)
 	{

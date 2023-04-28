@@ -32,11 +32,8 @@ int the_execve(char **ptr, list_y *environ, int number)
 		hdr = ptr[0];
 		a = 1;
 	}
-	
 	else
 		hdr = my_whic(ptr[0], environ);
-	
-	
 	if (access(hdr, X_OK) != 0)
 	{
 		found_not(ptr[0], number, environ);

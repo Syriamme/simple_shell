@@ -2,8 +2,10 @@
 
 /**
  *my_stringcat - concat strings
- *@dest: first string
- *@src: second string
+ *
+ *@first: first string
+ *
+ *@second: second string
  *Return: final concatenated string
  */
 char *my_stringcat(char *second, char *first)
@@ -16,7 +18,6 @@ char *my_stringcat(char *second, char *first)
 		length++;
 		sum_length++;
 	}
-	
 	while (first[length2] != '\0')
 	{
 		length2++;

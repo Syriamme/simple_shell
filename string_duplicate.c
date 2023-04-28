@@ -1,10 +1,11 @@
 #include "shell.h"
 
 /**
- * my_str_dp - a function for string dup,
- * @pointer: duplicate string
- * Return: duplicated string pointer
+ *my_str_dp - a function for string dup,
+ *@pointer: duplicate string
+ *Return: duplicated string pointer
  */
+
 char *my_str_dp(char *pointer)
 {
 	char *dup_string;
@@ -18,7 +19,6 @@ char *my_str_dp(char *pointer)
 		length++;
 	length++;
 	dup_string = malloc(sizeof(char) * length);
-	
 	if (dup_string == NULL)
 	{
 		return (NULL);

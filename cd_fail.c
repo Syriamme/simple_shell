@@ -12,8 +12,8 @@ void cd_fail(char *pointer, int nt, list_y *environ)
 {
 	char *sel;
 	char *nuber;
-	int sum =0;
-	
+	int sum = 0;
+
 	sel = my_get_enr("_", environ);
 	while (sel[sum] != '\0')
 		sum++;
@@ -46,7 +46,7 @@ void _wrong_number(char *pointer, int nt, list_y *environ)
 	char *sel = NULL;
 	char *nuba = NULL;
 	int sum = 0;
-	
+
 	sel = my_get_enr("_", environ);
 	while (sel[sum] != '\0')
 		sum++;

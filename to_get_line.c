@@ -7,8 +7,7 @@
  */
 size_t _my_get_line(char **pointer)
 {
-	ssize_t a = 0;
-	ssize_t get = 0; 
+	ssize_t a = 0, get = 0;
 	ssize_t y = 0;
 	ssize_t y2 = 0;
 	ssize_t k = 0;
@@ -32,7 +31,6 @@ size_t _my_get_line(char **pointer)
 			get = a;
 			y = 1;
 		}
-		
 		else
 		{
 			get = get + a;

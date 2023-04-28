@@ -23,21 +23,22 @@
 
 /**
  *struct list - linked list for env var
+ *
  *@varib: pointer to envt var string
+ *
  *@next: pointing to next node
  */
 typedef struct list
 {
-        char *varib;
-        struct list *next;
-
+	char *varib;
+	struct list *next;
 } list_y;
-
 
 int st_env(list_y **environ, char *nm, char *direc);
 char *con_strncat(char *destiny, char *sourc);
 void change_dir(list_y *environ, char *now);
-int execute_cd(list_y *environ, char *now, char *direct, char *ptr, int number);
+int execute_cd(list_y *environ,
+		char *now, char *direct, char *ptr, int number);
 int my_changedir(char **pointer, list_y *environ, int number);
 list_y *envron_link_lst(char **environ);
 int print_envt(char **ptr, list_y *environ);

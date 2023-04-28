@@ -1,12 +1,11 @@
 #include "shell.h"
 
 /**
- *re_t_sze -a function for del numbers
+ *re_t_sze - a function for del numbers
  *@pointer: command typed
  *@delim: the delimeta
  *Return: integer value token number
  */
-
 int re_t_sze(char *pointer, char delim)
 {
 	int j;
@@ -25,8 +24,8 @@ int re_t_sze(char *pointer, char delim)
 /**
  *my_cont_strok -string tokenization continuously even with delim
  *@pointer:command typed by user
- *@delimm:the delimeter
- *Return:token array
+ * @delim:the delimeter
+ * Return:token array
  */
 char **my_cont_strok(char *pointer, char *delimm)
 {

@@ -13,10 +13,8 @@ void _control_D(int a, char *mand, list_y *environ)
 	{
 		free(mand);
 		_linked_list_freed(environ);
-		
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "\n", 1);
-		
 		exit(0);
 	}
 }
@@ -48,8 +46,7 @@ int repeat_prompt(char **environ)
 		_control_D(j, mad, enr);
 		y_comad = mad;
 		mad = _space_ig(mad);
-		
-		for (m = 0; mad[m] != '\n'; m++);
+		for (m = 0; mad[m] != '\n'; m++)
 		mad[m] = '\0';
 		if (mad[0] == '\0')
 		{
@@ -58,15 +55,15 @@ int repeat_prompt(char **environ)
 		}
 		toek = NULL;
 		toek = my_strok(mad, " ");
-		
 		if (y_comad != NULL)
 			free(y_comad);
 		exi_t = my_bui_lt(toek, enr, mand_no, NULL);
-		
 		if (exi_t)
 			continue;
 		exi_t = the_execve(toek, enr, mand_no);
 	}
-	while (1);
-	return (exi_t);
+	while (1)
+	{
+		return (exi_t);
+	}
 }

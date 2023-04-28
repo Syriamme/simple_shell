@@ -9,7 +9,7 @@ list_y *envron_link_lst(char **environ)
 {
 	int a = 0;
 	list_y *head;
-	
+
 	for (head = NULL; environ[a] != NULL; a++)
 	{
 		end_node_add(&head, environ[a]);

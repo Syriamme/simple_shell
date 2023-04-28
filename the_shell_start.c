@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * control_C - ignore Ctrl-C input and prints prompt again
- * @n: takes in int from signal
+ * control_C -ignore Ctrl-C input and prints prompt again
+ * @y: takes in int from signal
  */
 
 void control_C(int y)
@@ -12,12 +12,14 @@ void control_C(int y)
 }
 
 /**
- * my_bui_lt - a function builtins handling
- * @toek: command typed by user
- * @number: the write error messsage take in by user
- * @environ: envnt var
- * @mand: freeing command
- * Return: 1 if success, 0 on failure
+ *my_bui_lt - a function builtins handling
+ *@toek: command typed by user
+ *
+ *@number: the write error messsage take in by user
+ *@environ: envnt var
+ *
+ *@mand: freeing command
+ *Return: 1 if success, 0 on failure
  */
 
 int my_bui_lt(char **toek, list_y *environ, int number, char **mand)
@@ -62,7 +64,7 @@ char *_space_ig(char *pointer)
 {
 	while (*pointer == ' ')
 	{
-		pointer ++;
+		pointer++;
 	}
 	return (pointer);
 }

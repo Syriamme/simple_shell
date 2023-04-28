@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * _nodeint_delete_at_index - deleting a node at a certain index
- * @head: holding address of node
- * @ixe: index input
- * Return: 1 if success, -1 if fail
+ *_nodeint_delte_at_index -deleting a node at a certain index
+ *@head: holding address of node
+ *@ixe: index input
+ *Return: 1 if success, -1 if fail
  */
 int _nodeint_delte_at_index(list_y **head, int ixe)
 {

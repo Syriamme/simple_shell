@@ -9,11 +9,12 @@
  */
 int my_strnlen(char *pointer, int point, char delimeter)
 {
-	int length;
+	int length = 0;
 
-	for (length = 0; (pointer[point] != delimeter) && (pointer[point] != '\0'); length++)
+	while (pointer[point] != delimeter && pointer[point] != '\0')
 	{
 		point++;
+		length++;
 	}
 	return (length);
 }
@@ -28,7 +29,7 @@ int m_t_sze(char *pointer, char delimet)
 {
 	int j = 0;
 	int nm_del = 0;
-	
+
 	while (pointer[j] != '\0')
 	{
 		if ((pointer[j] == delimet) && (pointer[j + 1] != delimet))
@@ -46,7 +47,7 @@ int m_t_sze(char *pointer, char delimet)
 
 
 /**
- * _delimeter_ig - avoids the previous delimeters 
+ *_delimeter_ig - avoids the previous delimeters
  * @pointer: the string
  * @delimeta: delimiter
  * Return: the current string
@@ -55,7 +56,6 @@ int m_t_sze(char *pointer, char delimet)
 char *_delimeter_ig(char *pointer, char delimeta)
 {
 	while (*pointer == delimeta)
-		
 		pointer++;
 	return (pointer);
 }
