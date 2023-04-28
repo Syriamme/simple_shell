@@ -17,7 +17,7 @@ char *_custom_ig(char *pointer)
  * _not_interacting - a function to handle piping
  * @eniv: envrionmental variables
  */
-void _non_interacting(list_t *eniv)
+void _non_interacting(list_y *eniv)
 {
 	size_t j = 0;
 	size_t m = 0;
@@ -37,14 +37,15 @@ void _non_interacting(list_t *eniv)
 	
 	n_coad = coand;
 	coand = custom_ig(coand);
-	n_line = my_strok(coand, "\n"); /* tokenize each command string */
+	n_line = my_strok(coand, "\n");
 	if (n_command != NULL)
 		free(n_coad);
 	m = 0;
 	while (a_lie[m] != NULL)
 	{
 		mand_no++;
-		toek = NULL; /* tokenize each command in array of commands */
+		toek = NULL;
+
 		toek =my_strok(a_lie[m], " ");
 		
 		ex_it = my_bui_lt(toek, eniv, mand_no, a_lie);

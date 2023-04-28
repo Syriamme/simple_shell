@@ -6,6 +6,7 @@
  * @src: appended string
  * Return: stringconcatenated
  */
+
 char *con_strncat(char *destiny, char *sourc)
 {
 	int length = 0, lenght2 = 0;
@@ -40,14 +41,14 @@ char *con_strncat(char *destiny, char *sourc)
  * @direc: directory path)
  * Return: 0 for success
  */
-int st_env(list_t **environ, char *nm, char *direc)
+int st_env(list_y **environ, char *nm, char *direc)
 {
 	int ixe = 0;
 	int a = 0;
 	char *ct;
-	list_t *hdr;
+	list_y *hdr;
 
-	ct =my _strdup(nm);
+	ct = my _strdup(nm);
 	ct = my_strcat(ct, "=");
 	ct = my_strcat(cat, dir);
 	ixe = my_gtenv(*environ, nm);
@@ -58,8 +59,8 @@ int st_env(list_t **environ, char *nm, char *direc)
 		hdr = hdr->next;
 		a++;
 	}
-	free(hdr->var);
-	hdr->var = my_strdup(ct);
+	free(hdr->varib);
+	hdr->varib = my_strdup(ct);
 	free(ct);
 	return (0);
 }
@@ -69,7 +70,8 @@ int st_env(list_t **environ, char *nm, char *direc)
  * @environ: updating OLDPWD and PATH
  * @now: bring in current working directotry
  */
-void change_dir(list_t *environ, char *now)
+
+void change_dir(list_y *environ, char *now)
 {
 	char *back = NULL;
 
@@ -94,7 +96,7 @@ void change_dir(list_t *environ, char *now)
  * @number: line error write out 
  * Return: 2  for fail 1 for success
  */
-int execute_cd(list_t *environ, char *now, char *direct, char *ptr, int number)
+int execute_cd(list_y *environ, char *now, char *direct, char *ptr, int number)
 {
 	int a;
 	a = 0;
@@ -127,7 +129,7 @@ int execute_cd(list_t *environ, char *now, char *direct, char *ptr, int number)
  * @number: nth command with error
  * Return: 2 for fail
  */
-int my_ changedir(char **pointer, list_t *environ, int number)
+int my_changedir(char **pointer, list_y *environ, int number)
 {
 	char *now = NULL;
 	char *direct = NULL;

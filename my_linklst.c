@@ -5,7 +5,7 @@
  * @nth: this is the linked list
  * Return: the linked list size
  */
-size_t _list_print(list_t *nth)
+size_t _list_print(list_y *nth)
 {
 	list_y *h_list = nth;
 	int sum = 0, a = 0;
@@ -35,14 +35,14 @@ size_t _list_print(list_t *nth)
 /**
  * end_node_add - this function will add a node
  * @head: head of linked list pointer
- * @str: new node data
+ * @pointer: new node data
  * Return: new node pointer
  */
-list_y *end_node_add(list_t **head, char *pointer)
+list_y *end_node_add(list_y **head, char *pointer)
 {
 	list_y *hdr, *new_node;
 
-	if (pointer == NULL || head == NULL)
+	if (*pointer == NULL || *head == NULL)
 		return (NULL);
 	
 	new_node = malloc(sizeof(list_t));
@@ -78,7 +78,7 @@ list_y *end_node_add(list_t **head, char *pointer)
  * @ixe: index input
  * Return: 1 if success, -1 if fail
  */
-int _nodeint_delte_at_index(list_t **head, int ixe)
+int _nodeint_delte_at_index(list_y **head, int ixe)
 {
 	int sum = 0;
 	list_y *x_head;
@@ -116,7 +116,7 @@ int _nodeint_delte_at_index(list_t **head, int ixe)
  * _linked_list_freed - a function that gets linked list free
  * @thelist: the linked list
  */
-void _linked_list_freed(list_t *thelist)
+void _linked_list_freed(list_y *thelist)
 {
 	list_y *hdr;
 

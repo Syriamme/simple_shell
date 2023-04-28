@@ -36,7 +36,7 @@ int custom_atoi(char *ptr)
  * Return: 0 (success) 2 (if fail)
  */
 
-int free_to_exit(char **ptr, list_t *environ, int number, char **mand)
+int free_to_exit(char **ptr, list_y *environ, int number, char **mand)
 {
 	int valu_e = 0;
 
@@ -45,11 +45,11 @@ int free_to_exit(char **ptr, list_t *environ, int number, char **mand)
 
 	if (valu_e == -1)
 	{
-		_wrong_number(ptr[1], number, environ); /* print error msg */
+		_wrong_number(ptr[1], number, environ);
 		double_ptr_free(ptr);
 		return (2);
 	}
-	double_ptr_free(ptr); /* free user input before exiting program */
+	double_ptr_free(ptr);
 	_linked_list_freed(env);
 	if (mand != NULL)
 		double_ptr_free(mand);

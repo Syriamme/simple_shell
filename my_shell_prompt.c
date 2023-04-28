@@ -4,6 +4,7 @@
  * control_C - ignore Ctrl-C input and prints prompt again
  * @n: takes in int from signal
  */
+
 void control_C(int y)
 {
 	(void)y;
@@ -18,7 +19,8 @@ void control_C(int y)
  * @mand: freeing command
  * Return: 1 if success, 0 on failure
  */
-int my_bui_lt(char **toek, list_t *environ, int number, char **mand)
+
+int my_bui_lt(char **toek, list_y *environ, int number, char **mand)
 {
 	int a = 0;
 
@@ -55,6 +57,7 @@ int my_bui_lt(char **toek, list_t *environ, int number, char **mand)
  *
  * Return: new string
  */
+
 char *_space_ig(char *pointer)
 {
 	while (*pointer == ' ')
@@ -71,7 +74,8 @@ char *_space_ig(char *pointer)
  * @mand: command typed by user
  * @environ: envt  var linked_list
  */
-void _control_D(int a, char *mand, list_t *environ)
+
+void _control_D(int a, char *mand, list_y *environ)
 {
 	if (a == 0)
 	{
@@ -90,16 +94,13 @@ void _control_D(int a, char *mand, list_t *environ)
  * @environ: envt variables
  * Return: 0(success)
  */
+
 int repeat_prompt(char **environ)
 {
-	list_t *enr;
-	size_t j = 0;
-	size_t m = 0;
-	int mand_no = 0;
-	int exi_t = 0;
-	char *mad;
-	char *y_comad;
-	char **toek;
+	list_y *enr;
+	size_t j = 0, m = 0;
+	char *mad, **toek, *y_comad;
+	int mand_no = 0, exi_t = 0;
 
 	environ = _linked_list_envt(enr);
 	do {

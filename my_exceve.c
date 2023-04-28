@@ -6,7 +6,7 @@
  * @environ: The linked_list envt var
  * Return: 0 for success
  */
-void com_exit(char **pointer, list_t *environ)
+void com_exit(char **pointer, list_y *environ)
 {
 	double_pt_freer(pointer);
 	_linked_list_freed(environ);
@@ -20,7 +20,7 @@ void com_exit(char **pointer, list_t *environ)
  * @number: nth command with an errror message
  * Return: 0 for success
  */
-int the_execve(char **ptr, list_t *environ, int number)
+int the_execve(char **ptr, list_y *environ, int number)
 {
 	char *hdr;
 	int stat = 0;

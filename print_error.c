@@ -8,7 +8,7 @@
  *Return: Always 0 (success)
  * */
 
-void found_not(char *pointer, int nth, list_t *environ)
+void found_not(char *pointer, int nth, list_y *environ)
 {
 	char *sel;
 	char *nuber;
@@ -48,7 +48,7 @@ void found_not(char *pointer, int nth, list_t *environ)
  * Return: Always 0  succes
  */
 
-void cd_fail(char *pointer, int nt, list_t *environ)
+void cd_fail(char *pointer, int nt, list_y *environ)
 {
 	char *sel;
 	char *nuber;
@@ -88,7 +88,7 @@ void cd_fail(char *pointer, int nt, list_t *environ)
  * @eniron: the envt var
  */
 
-void _wrong_number(char *pointer, int nt, list_t *environ)
+void _wrong_number(char *pointer, int nt, list_y *environ)
 {
 	char *sel = NULL;
 	char *nuba = NULL;

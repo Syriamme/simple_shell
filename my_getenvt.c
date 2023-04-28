@@ -4,7 +4,7 @@
  * custom_strdp - string duplicate function
  * @pointer: pointer to a string to duplicate
  * @nth: bytes being excluded
- * Return: string (e.g. /bin:/bin/ls)
+ * Return: the string
  */
 
 char *custom_strdp(char *pointer, int nth)
@@ -38,7 +38,7 @@ char *custom_strdp(char *pointer, int nth)
  * Return: environ requested
  */
 
-char *my_get_enr(char *pointer, list_t *environ)
+char *my_get_enr(char *pointer, list_y *environ)
 {
 	int b = 0;
 	int nth = 0;
