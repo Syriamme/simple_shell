@@ -33,7 +33,8 @@ int repeat_prompt(char **environ)
 	int mand_no = 0, exi_t = 0;
 
 	enr = envron_link_lst(environ);
-	do {
+	while (1)
+	{
 		mand_no++;
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "$ ", 2);
@@ -62,8 +63,5 @@ int repeat_prompt(char **environ)
 			continue;
 		exi_t = the_execve(toek, enr, mand_no);
 	}
-	while (1);
-	{
-		return (exi_t);
-	}
+	return (exi_t);
 }
