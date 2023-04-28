@@ -41,7 +41,7 @@ char *my_get_enr(char *pointer, list_y *environ)
 {
 	int b = 0;
 	int nth = 0;
-	
+
 	while (environ != NULL)
 	{
 		for (b = 0; (environ->varib)[b] == pointer[b]; b++)
