@@ -46,9 +46,8 @@ int the_execve(char **ptr, list_y *environ, int number);
 int custom_atoi(char *ptr);
 void double_ptr_free(char **pointer);
 int free_to_exit(char **ptr, list_y *environ, int number, char **mand);
-size_t _my_get_line(char **pointer);
 char *my_get_enr(char *pointer, list_y *environ);
-
+size_t _my_get_line(char **pointer);
 char *custom_strdp(char *pointer, int nth);
 size_t _list_print(list_y *nth);
 list_y *end_node_add(list_y **head, char *pointer);
