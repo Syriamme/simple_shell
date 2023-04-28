@@ -62,7 +62,7 @@ int repeat_prompt(char **environ)
 			continue;
 		exi_t = the_execve(toek, enr, mand_no);
 	}
-	while (1)
+	while (1);
 	{
 		return (exi_t);
 	}
